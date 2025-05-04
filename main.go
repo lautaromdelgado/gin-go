@@ -2,21 +2,13 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/lautaromdelgado/gin-go/routes"
 )
 
 func main() {
-	r := gin.New()
+	r := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello, World!")
-	})
-
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"status":  "success",
-			"message": "pong",
-		})
-	})
+	routes.InitializeRoutes(r)
 
 	r.Run(":8080")
 }
