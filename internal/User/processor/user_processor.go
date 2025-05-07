@@ -1,9 +1,9 @@
 package processor
 
-import "github.com/lautaromdelgado/gin-go/internal/User/domain"
+import "github.com/lautaromdelgado/gin-go/internal/User/dto"
 
 type IUserProcessor interface {
-	CreateUser(user *domain.User) error
+	CreateUser(user *dto.UserRequest) error
 }
 
 type UserProcessor struct{}

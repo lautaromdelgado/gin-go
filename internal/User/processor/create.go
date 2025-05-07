@@ -3,10 +3,10 @@ package processor
 import (
 	"errors"
 
-	"github.com/lautaromdelgado/gin-go/internal/User/domain"
+	"github.com/lautaromdelgado/gin-go/internal/User/dto"
 )
 
-func (u *UserProcessor) CreateUser(user *domain.User) error {
+func (u *UserProcessor) CreateUser(user *dto.UserRequest) error {
 	if user.Nombre == "" {
 		return errors.New("nombre is required")
 	}
